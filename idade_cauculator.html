@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>cauculador de idade</title>
+</head>
+<style>
+	body {
+		overflow: hidden;
+		background-color: #2a2a2a;
+	}
+	.pai {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100vh;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.cauc {
+		margin-top: 10px;
+		border: none;
+		border-radius: 10px;
+		height: 40px;
+		width: 100px;
+	}
+
+	input {
+		margin-top: 10px;
+		height: 40px;
+		width: 80%;
+		border-radius: 50px;
+		outline: 2px solid red;
+		border: none;
+		font-size: 20px;
+		text-align: center;
+	}
+
+	.idade {
+		font-family: arial;
+		color: white;
+	}
+</style>
+<body>
+	<div class="pai">
+		<h1 class="idade">idade: 0</h1>
+		<input type="number" placeholder="nascimento" class="ip1">
+		<input type="number" placeholder="ano atual" class="ip2">
+		<button class="cauc">idade</button>
+	</div>
+</body>
+<script>
+	const btn = document.querySelector('.cauc')
+	const textoIdade = document.querySelector('.idade')
+	const nasc = document.querySelector('.ip1')
+	const ano = document.querySelector('.ip2')
+
+	function caucular() {
+		let idade_atual = nasc.value - ano.value
+		textoIdade.innerText = "idade: " + idade_atual
+	}
+
+	btn.addEventListener('click', function() {
+		caucular()
+	})
+</script>
+</html>
